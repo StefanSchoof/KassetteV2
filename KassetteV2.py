@@ -23,7 +23,7 @@ def main():
                 sonos.unjoin()
                 sonos.clear_queue()
                 sonos.add_to_queue(playlist)
-                sonos.play()
+                sonos.play_from_queue(0)
                 duration = (datetime.utcnow() - start_time).total_seconds() * 1000
                 telemetry_client.track_request("Play", nfc_number, True, duration=duration,
                                                properties={'playList': playlist.title})
