@@ -1,0 +1,16 @@
+jobs:
+- job: docker
+  pool: Hosted Ubuntu 1604
+
+  steps:
+  - task: Docker@1
+    inputs:
+      containerregistrytype: 'Container Registry'
+      dockerRegistryEndpoint: 'docker hub sschoof'
+      command: login
+
+  - bash: ./dockerbuild.sh
+    displayName: 'docker build'
+    env:
+      PUSH: true
+      USECACHEFROM: true
