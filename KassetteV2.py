@@ -41,7 +41,7 @@ scancodes = {
 def main():
     accumluator = ""
     devicePath = "/dev/input/event0"
-    dev = InputDevice()
+    dev = InputDevice(devicePath)
     dev.grab()
 
     print("Start listining on " + devicePath)
