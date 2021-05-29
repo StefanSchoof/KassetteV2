@@ -1,6 +1,4 @@
-FROM python:3.9-alpine
-
-RUN apk add --no-cache py3-libevdev
+FROM python:3.9
 
 WORKDIR /usr/src/app
 
