@@ -1,0 +1,10 @@
+version: "3"
+services:
+  kassettev2:
+    image: stefanschoof/kassettev2
+    restart: always
+    devices:
+      - /dev/input/event0:/dev/input/event0
+    environment:
+      - SPEAKER=${SPEAKER}
+    network_mode: host
